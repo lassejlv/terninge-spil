@@ -27,6 +27,8 @@ const RandomDiceAnimation = () => {
 };
 
 export function Dice({ result, picking }) {
+  const [initalImg] = useState(one);
+
   return (
     <>
       {picking ? (
@@ -43,7 +45,9 @@ export function Dice({ result, picking }) {
         <img src={fifth} alt="fifth" className={style.diceImage} />
       ) : result === 6 ? (
         <img src={sixth} alt="sixth" className={style.diceImage} />
-      ) : null}
+      ) : (
+        <img src={initalImg} alt="initalImg" className={style.diceImage} />
+      )}
     </>
   );
 }

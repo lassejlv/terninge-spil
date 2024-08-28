@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import style from './PlayerBoard.module.scss';
 import { Player } from './Player/Player';
 import { Dice } from '../Dice/Dice';
@@ -23,9 +23,12 @@ export function PlayerBoard({ player, diceSum, points }) {
     console.log(newResult);
   };
 
+
   return (
     <div className={style.containerPlayer}>
       <Confetti />
+
+
       <Player player={player} diceSum={diceSum} points={points} />
       <div className={style.diceConainer}>
         <Dice result={result} picking={picking} />
