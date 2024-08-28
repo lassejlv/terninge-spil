@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 * {
-  background-image: url('/background.png');
+    z-index: 1;
+}
+
+body {
+  background-image: url('/backgroundNew.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   font-family: 'Source Code Pro', monospace;
-  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
   color: white;
 }
