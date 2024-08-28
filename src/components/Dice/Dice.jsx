@@ -1,5 +1,4 @@
 import style from '../Dice/Dice.module.scss';
-import { Button } from '../Button/Button';
 import { useEffect, useState } from 'react';
 
 // images
@@ -16,72 +15,35 @@ const RandomDiceAnimation = () => {
   const [randomImage, setRandomImage] = useState(one);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       const randomImage = allImages[Math.floor(Math.random() * allImages.length)];
       setRandomImage(randomImage);
     }, 200);
-  }, [randomImage]);
 
+    return () => clearInterval(interval);
+  }, []);
 
-  return (
-    <img src={randomImage} alt="randomImage" className={`${style.diceImage} ${style.spinDice}`} />
-  )
-}
+  return <img src={randomImage} alt="randomImage" className={`${style.diceImage} ${style.spinDice}`} />;
+};
 
-
-export function Dice() {
-  const [result, setResult] = useState(null);
-  const [picking, setPicking] = useState(false);
-
-  const randomNumber = () => Math.floor(Math.random() * 6 + 1);
-
-  useEffect(() => {
-    if (picking) {
-
-      console.log('picking');
-    }
-  }, [picking]);
-
+export function Dice({ result, picking }) {
   return (
     <>
-
       {picking ? (
-        <>
-          {/* animate the im */}
-          <RandomDiceAnimation />
-        </>
-      ) : (
-        <>
-          {result === 1 ? (
-            <img src={one} alt="one" className={style.diceImage} />
-          ) : result === 2 ? (
-            <img src={second} alt="second" className={style.diceImage} />
-          ) : result === 3 ? (
-            <img src={third} alt="third" className={style.diceImage} />
-          ) : result === 4 ? (
-            <img src={fourth} alt="fourth" className={style.diceImage} />
-          ) : result === 5 ? (
-            <img src={fifth} alt="fifth" className={style.diceImage} />
-          ) : result === 6 ? (
-            <img src={sixth} alt="sixth" className={style.diceImage} />
-          ) : null}
-        </>
-      )}
-
-      <Button
-        onClick={() => {
-          setResult(randomNumber);
-          setPicking(true);
-
-          setTimeout(() => {
-            setPicking(false);
-          }, 1000);
-
-          console.log(result);
-        }}
-      >
-        Roll the Dice
-      </Button>
+        <RandomDiceAnimation />
+      ) : result === 1 ? (
+        <img src={one} alt="one" className={style.diceImage} />
+      ) : result === 2 ? (
+        <img src={second} alt="second" className={style.diceImage} />
+      ) : result === 3 ? (
+        <img src={third} alt="third" className={style.diceImage} />
+      ) : result === 4 ? (
+        <img src={fourth} alt="fourth" className={style.diceImage} />
+      ) : result === 5 ? (
+        <img src={fifth} alt="fifth" className={style.diceImage} />
+      ) : result === 6 ? (
+        <img src={sixth} alt="sixth" className={style.diceImage} />
+      ) : null}
     </>
   );
 }

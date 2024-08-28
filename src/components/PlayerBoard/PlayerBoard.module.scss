@@ -7,7 +7,7 @@
         padding: 1rem;
         margin: 0;
         text-align: center;
-        background-color: red;
+       // background-color: red;
         h2{
             font-size: 3rem;
         }
@@ -15,4 +15,11 @@
             font-size: 2rem;
         }
     }
+}
+
+.diceConainer {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 2rem;
 }
