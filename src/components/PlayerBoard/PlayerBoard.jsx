@@ -1,12 +1,21 @@
 import style from './PlayerBoard.module.scss'
-import { Player } from '../PlayerBoard/Player/Player'
+import { Player } from './Player/Player'
+import { Dice } from '../Dice/Dice'
+import { Button } from '../Button/Button'
 
-export function PlayerBoard({diceSum, point, player}){
-    return(
+export function PlayerBoard({player, diceSum, points}) {
+
+    
+    return (
         <>
-        <Player player={player}></Player>
-        <h2>{diceSum}</h2>
-        <h3>Round Points: {point}</h3>
+            <div className={style.containerPlayer}>
+                <Player player={player} diceSum={diceSum} points={points} ></Player>
+                <Dice></Dice>
+                <div className={style.containerButtons}>
+                    <Button></Button>
+                    <Button></Button>
+                </div>
+            </div>
         </>
     )
 }
