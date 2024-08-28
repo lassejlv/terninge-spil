@@ -1,13 +1,7 @@
-h1 {
-  font-size: 250px;
-  animation: zoomText 1s infinite alternate;
-}
-
-@keyframes zoomText {
-  0% {
-    font-size: 250px;
-  }
-  100% {
-    font-size: 300px;
-  }
+* {
+  background-image: url('/bg.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
