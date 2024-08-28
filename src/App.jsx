@@ -1,4 +1,4 @@
-import { Button } from './components/Button';
+import { Button } from './components/Button/Button';
 import { Dice } from './components/Dice/Dice';
 import { Player } from './components/Player/Player';
 import { useEffect, useState } from 'react';
