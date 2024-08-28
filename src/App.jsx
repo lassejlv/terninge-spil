@@ -2,8 +2,7 @@ import { Container } from './components/Container';
 import { Header } from './components/Header';
 import { PlayerBoard } from './components/PlayerBoard/PlayerBoard';
 import style from './components/PlayerBoard/PlayerBoard.module.scss';
-// import { Dice } from './components/Dice/Dice';
-// import { Player } from './components/Player/Player';
+import { Dice } from './components/Dice/Dice';
 import { useEffect, useState } from 'react';
 
 export default function App() {
