@@ -13,8 +13,10 @@
        color: #e89c3f;
         h2{
             font-size: 3rem;
+            margin: 1rem 0;
         }
         h3{
+            margin-top: 0rem;
             font-size: 2rem;
         }
     }
@@ -25,4 +27,18 @@
     justify-content: center;
     gap: 4rem;
     margin-bottom: 2rem;
+}
+
+.containerButtons{
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    :nth-child(2){
+        background-color: #333;
+        color: 999;
+        &:hover{
+            cursor: default;
+            background-color: #333;
+        }
+    }
 }
