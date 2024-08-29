@@ -5,35 +5,39 @@ import { Dice } from '../Dice/Dice';
 import { Button } from '../Button/Button';
 import Confetti from 'react-confetti';
 
-export function PlayerBoard({ player, diceSum, points, avatar }) {
-  const [result, setResult] = useState(null);
-  const [picking, setPicking] = useState(false);
-
+export function PlayerBoard({ player, points, avatar }) {
   const randomNumber = () => Math.floor(Math.random() * 6 + 1);
+  const [result1, setResult1] = useState(1);
+  const [result2, setResult2] = useState(1);
+  const [picking, setPicking] = useState(false);
+  const [diceSumState, setDiceSumState] = useState(0);
+  const [hasRolled, setHasRolled] = useState(false);
 
   const rollDice = () => {
     setPicking(true);
-    const newResult = randomNumber();
+    const newResult1 = randomNumber();
+    const newResult2 = randomNumber();
 
     setTimeout(() => {
-      setResult(newResult);
+      setResult1(newResult1);
+      setResult2(newResult2);
       setPicking(false);
+      setHasRolled(true);
+      setDiceSumState(prevSum => prevSum + newResult1 + newResult2);
     }, 1000);
-
-    console.log(newResult);
   };
 
   return (
     <div className={style.containerPlayer}>
       {/* <Confetti /> */}
-      <Player player={player} avatar={avatar} diceSum={diceSum} points={points} />
+      <Player player={player} avatar={avatar} diceSum={diceSumState} points={points} />
       <div className={style.diceConainer}>
-        <Dice result={result} picking={picking} />
-        <Dice result={result} picking={picking} />
+        <Dice result={hasRolled ? result1 : 1} picking={picking} />
+        <Dice result={hasRolled ? result2 : 1} picking={picking} />
       </div>
       <div className={style.containerButtons}>
-        <Button onClick={rollDice}>Roll the Dice</Button>
-        <Button>Other Action</Button>
+        <Button onClick={rollDice}>Roll</Button>
+        <Button>Hold</Button>
       </div>
     </div>
   );
