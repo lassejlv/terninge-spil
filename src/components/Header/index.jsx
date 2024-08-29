@@ -7,12 +7,12 @@ export const Header = styled.h1`
   margin: 0;
 `;
 export const Header2 = styled.h2`
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   background-color: #00000083;
   color: #e89c3f;
   width: fit-content;
-  margin: 0.5rem auto;
+  margin: 0.5rem auto 1rem;
   border: 3px solid #de8c21;
   border-radius: 10px;
   padding: 1rem;
