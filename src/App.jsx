@@ -12,10 +12,10 @@ export default function App() {
 
   return (
     <Container>
-      <Header>Roll the Dice</Header>
+      <Header>21 Dice Game</Header>
       <div className={style.containerPlayerBoard}>
-        <PlayerBoard player='Player 1' diceSum={sum} points={points}></PlayerBoard>
-        <PlayerBoard player='Player 2' diceSum={sum} points={points}></PlayerBoard>
+        <PlayerBoard player='Player 1' avatar='../src/assets/img/player1.jpg' diceSum={sum} points={points}></PlayerBoard>
+        <PlayerBoard player='Player 2' avatar='../src/assets/img/player2.jpg' diceSum={sum} points={points}></PlayerBoard>
       </div>
     </Container>
   );

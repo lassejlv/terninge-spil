@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import style from './button.module.scss'
 
 export const Button = styled.button`
-  background-color: black;
+  background-color: ;
   border: none;
   border-radius: 4px;
   color: white;

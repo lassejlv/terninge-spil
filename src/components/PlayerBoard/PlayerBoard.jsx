@@ -5,7 +5,7 @@ import { Dice } from '../Dice/Dice';
 import { Button } from '../Button/Button';
 import Confetti from 'react-confetti';
 
-export function PlayerBoard({ player, diceSum, points }) {
+export function PlayerBoard({ player, diceSum, points, avatar }) {
   const [result, setResult] = useState(null);
   const [picking, setPicking] = useState(false);
 
@@ -25,8 +25,8 @@ export function PlayerBoard({ player, diceSum, points }) {
 
   return (
     <div className={style.containerPlayer}>
-      <Confetti />
-      <Player player={player} diceSum={diceSum} points={points} />
+      {/* <Confetti /> */}
+      <Player player={player} avatar={avatar} diceSum={diceSum} points={points} />
       <div className={style.diceConainer}>
         <Dice result={result} picking={picking} />
         <Dice result={result} picking={picking} />
