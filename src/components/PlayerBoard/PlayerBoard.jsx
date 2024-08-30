@@ -12,8 +12,12 @@ export function PlayerBoard({ player, points, avatar }) {
   const [picking, setPicking] = useState(false);
   const [diceSumState, setDiceSumState] = useState(0);
   const [hasRolled, setHasRolled] = useState(false);
+  const [isRolling, setIsRolling] = useState(false);
 
   const rollDice = () => {
+    if (isRolling) return;
+
+    setIsRolling(true);
     setPicking(true);
     const newResult1 = randomNumber();
     const newResult2 = randomNumber();
@@ -24,6 +28,7 @@ export function PlayerBoard({ player, points, avatar }) {
       setPicking(false);
       setHasRolled(true);
       setDiceSumState(prevSum => prevSum + newResult1 + newResult2);
+      setIsRolling(false);
     }, 1000);
   };
 
