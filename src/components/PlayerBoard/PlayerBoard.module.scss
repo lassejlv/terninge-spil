@@ -1,3 +1,8 @@
+@font-face {
+    src: url('../../assets/fonts/JurassicPark-BL48.ttf') format('truetype');
+    font-family: "Jurrasic Park";
+  }
+
 .containerPlayerBoard{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -14,6 +19,7 @@
         h2{
             font-size: 3rem;
             margin: 1rem 0;
+            
         }
         h3{
             margin-top: 0rem;

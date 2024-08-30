@@ -5,6 +5,7 @@ import { PlayerBoard } from './components/PlayerBoard/PlayerBoard';
 import { useState } from 'react';
 import style from './components/PlayerBoard/PlayerBoard.module.scss';
 
+
 export default function App() {
   const [points, setPoints] = useState('0');
 
