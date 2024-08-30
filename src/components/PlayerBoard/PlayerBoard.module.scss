@@ -1,17 +1,28 @@
+@font-face {
+    src: url('../../assets/fonts/JurassicPark-BL48.ttf') format('truetype');
+    font-family: "Jurrasic Park";
+  }
+
 .containerPlayerBoard{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     .containerPlayer{
-        border: 2px solid black;
+        border: 3px solid #de8c21;
+        border-radius: 10px;
         padding: 1rem;
         margin: 0;
         text-align: center;
-       // background-color: red;
+    //    background-color: #d7c089b3;
+       background-color: #00000083;
+       color: #e89c3f;
         h2{
             font-size: 3rem;
+            margin: 1rem 0;
+            
         }
         h3{
+            margin-top: 0rem;
             font-size: 2rem;
         }
     }
@@ -22,4 +33,18 @@
     justify-content: center;
     gap: 4rem;
     margin-bottom: 2rem;
+}
+
+.containerButtons{
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    :nth-child(2){
+        background-color: #333;
+        color: 999;
+        &:hover{
+            cursor: default;
+            background-color: #333;
+        }
+    }
 }

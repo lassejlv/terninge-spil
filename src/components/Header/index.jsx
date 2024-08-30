@@ -1,8 +1,22 @@
 import styled from 'styled-components';
 
 export const Header = styled.h1`
-  color: #ecedf0;
-  font-size: 2rem;
+  color: #290b41;
+  font-size: 7rem;
+  font-family: "Jurrasic Park";
+  outline: 5px;
+  letter-spacing: 5px;
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0;
+`;
+export const Header2 = styled.h2`
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: #00000083;
+  color: #e89c3f;
+  width: fit-content;
+  margin: 0.5rem auto 1rem;
+  border: 3px solid #de8c21;
+  border-radius: 10px;
+  padding: 1rem;
 `;
