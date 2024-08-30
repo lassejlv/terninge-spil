@@ -13,11 +13,16 @@ export function PlayerBoard({ player, points, avatar }) {
   const [diceSumState, setDiceSumState] = useState(0);
   const [hasRolled, setHasRolled] = useState(false);
   const [isRolling, setIsRolling] = useState(false);
+
   const [hasLost, setHasLost] = useState(false);
   const [turnMsg, setTurnMsg] = useState('Your Turn');
 
   const rollDice = () => {
     if (isRolling || hasLost) return;
+
+
+  
+
 
     setIsRolling(true);
     setPicking(true);
@@ -32,6 +37,7 @@ export function PlayerBoard({ player, points, avatar }) {
       setPicking(false);
       setHasRolled(true);
 
+
       if(updatedSum > 21) {
         setDiceSumState(updatedSum)
         setHasLost(true);
@@ -39,6 +45,7 @@ export function PlayerBoard({ player, points, avatar }) {
       } else {setDiceSumState(updatedSum)
 
       }
+
       setIsRolling(false);
     }, 1000);
   };
