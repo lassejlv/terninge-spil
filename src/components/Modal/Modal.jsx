@@ -1,11 +1,17 @@
 import { useState } from "react";
-import style from './Modal.module.scss'
+import style from '.src/components/Modal/Modal.module.scss'
 
-export const Modal = ({resultImage, winPlayer}) => {
+export const Modal = ({ resultImage, winPlayer}) => {
+   
     return (
         <>
-        <h3>{winPlayer}</h3>
-        <img className={styled.winImage} src={resultImage} />
+        <div 
+        className={style.resultContainer}>
+            <section className={style.result}>
+                <h3>{winPlayer}</h3>
+                <img className={style.winImage} src={resultImage} />
+            </section>
+        </div>
         </>
-    )
-}
+        )
+    }

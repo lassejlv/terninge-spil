@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { Header2 } from './components/Header';
 import { PlayerBoard } from './components/PlayerBoard/PlayerBoard';
 import { useState } from 'react';
+// import { Modal } from './components/Modal/Modal';
 import style from './components/PlayerBoard/PlayerBoard.module.scss';
 
 
