@@ -3,3 +3,16 @@
     border: 3px solid #e89c3f;
     border-radius: 10px;
 }
+
+.turnContainer{
+    height: 5rem;
+    position: relative;
+    h2{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        // display: none;
+        padding: 0;
+    }
+}
